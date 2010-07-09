@@ -1,11 +1,26 @@
 AmToolkit::Application.routes.draw do |map|
-  devise_for :users
+  resources :agents
+
+  resources :agencies
+
+  resources :service_providers
+
+	devise_for :users, :path_names => { :sign_in => 'login', :sign_out => 'logout' }
+	 match 'login', :to => 'devise/sessions#new', :as => "new_user_session"
+	 match 'logout', :to  => 'devise/sessions#destroy', :as => "destroy_user_session"
+	 match 'signup', :to => 'devise/registrations#new', :as => "new_user_registration"
+
+	resources :users
 
   resources :pages do
     collection do
       get :members_index
     end
   end
+
+	constraints(Subdomain) do
+		match '/' => 'service_providers#show'
+	end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
