@@ -7,25 +7,21 @@ gem 'devise', '1.1.rc2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
-
 # Use unicorn as the web server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :test do
+	gem "shoulda"
+	gem "factory_girl"
+	gem 'sqlite3-ruby', :require => 'sqlite3'
+end
 
-# To use debugger
-gem 'ruby-debug'
+group :development do
+	# Use mongrel as the web server
+	gem "mongrel"
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+	# To use debugger
+	gem 'ruby-debug'
 
-# Bundle gems for certain environments:
-# gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end
+	gem 'sqlite3-ruby', :require => 'sqlite3'
+end
