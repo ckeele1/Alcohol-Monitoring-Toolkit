@@ -1257,16 +1257,6 @@ body {
 
 /* Header Regions
 -------------------------------------------------------------- */
-/* Header Top region to the bottom of Header region */
-/* For full-width header background, add background image/color here */
-.header-group-wrapper {
-	background-color: #502D7F;
-}
-
-.header-group {
-	padding-top: 10px;
-}
-
 .header-inner .block {
 	width: 470px;
 }
@@ -1277,33 +1267,21 @@ body {
 	margin: 0;
 }
 
-.header-bottom-group-inner div .block .inner {
+.header-bottom-inner div .block .inner {
 	margin: 0;
 }
 
-.header-bottom-group-wrapper {
-	background: url("") repeat-x scroll center top #502D7F;
-	border-top: 1px solid #8D809A;
-	border-bottom: 1px solid #8D809A;
-	margin-bottom: 20px;
+.header-bottom-wrapper {
+	background: #FFF;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
-.header-bottom-group {
-	max-height: 176px;
-	min-height: 100px;
-	overflow: hidden;
+.header-bottom {
+
 }
 
-.header-bottom-group div {
-	overflow: visible;
-}
-
-.header-bottom-group .block {
-	width: auto;
-	margin-bottom: 0;
-}
-
-.header-bottom-group .header-bottom-content-last.block {
+.header-bottom .header-bottom-content-last.block {
 	float: right;
 	text-align: right;
 }
@@ -1344,8 +1322,7 @@ body {
  (columns, sidebars, and main content).  The Preface Bottom region
  is inside the Main Area. */
 .preface-top-wrapper {
-	background: #DFDFDF;
-	margin-bottom: 20px;
+	background: #FFF;
 }
 
 .preface-top {
@@ -1751,17 +1728,22 @@ tr.drag-previous td {
 
 
 /* APPLICATION STYLES */
+#logo {
+	float: left;
+}
+
 #login-bar {
 	float: right;
 }
 
 /* Main Menu */
 #menu, #menu ul {
-	background: #DDD;
+	background: none;
 	float: left;
 	width: 100%;
-	padding-left: 10px;
-	font-family: Arial,Helvetica,sans-serif;
+	padding-left: 0px;
+	margin-left: 0px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
 	margin: 0;
@@ -1783,11 +1765,14 @@ tr.drag-previous td {
 	padding: 4px 20px 4px 4px;
 }
 
+#menu li:first-child {
+	padding-left: 0px;
+}
+
 #menu li ul {
 	position: absolute;
 	background: #999;
-	border: 1px solid #000;
-	padding: 4px;
+	border: 1px solid #666;
 	width: auto;
 	left: -999em;
 }
@@ -1814,4 +1799,28 @@ tr.drag-previous td {
 #menu li li.sfhover ul,
 #menu li li li.sfhover ul {
 	left: auto;
+}
+
+#menu li li,
+#menu li li:first-child {
+	padding-left: 4px;
+}
+
+#menu li li:hover,
+#menu li li li:hover,
+#menu li li.sfhover,
+#menu li li li.sfhover {
+	background: #CCC;
+}
+
+#header-top {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#header-wrapper {
+	border-bottom: 1px solid #000;
+}
+
+#header {
 }

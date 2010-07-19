@@ -20,6 +20,7 @@
 			<div id="header-top-wrapper" class="header-top-wrapper full-width">
 				<div id="header-top" class="header-top row grid16-16">
 					<div id="header-top-inner" class="header-top-inner inner clearfix">
+						<%= render :partial => 'shared/logo' %>
 						<%= render :partial => 'shared/login_bar' %>
 					</div><!-- /header-top-inner -->
 				</div><!-- /header-top -->
@@ -37,7 +38,7 @@
 				<div id="header-bottom" class="header-bottom row grid16-16">
 					<div id="header-bottom-inner" class="header-bottom-inner inner clearfix">
 						<% if yield(:title) %>
-							<h1 class="title"><%= yield(:title) %></h1>
+							<h2 class="title"><%= yield(:title) %></h2>
 						<% end %>
 					</div><!-- /header-bottom-inner -->
 				</div><!-- /header-bottom -->
