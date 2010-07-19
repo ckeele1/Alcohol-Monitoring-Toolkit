@@ -1,0 +1,27 @@
+<h1>Listing courts</h1>
+
+<table>
+	<thead>
+		<th>Name</th>
+		<th>Active</th>
+		<th class="actions">Actions</th>
+	</thead>
+
+<% @courts.each do |court| %>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+			<td><%= court.name %></td>
+			<td><%= court.active %></td>
+			<td class="actions">
+				<%= link_to image_tag('icons/show.png', :alt => 'Show'), court %> | 
+				<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_court_path(court) %> | 
+				<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), court, :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		</tr>
+	</tbody>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Court', new_court_path %>

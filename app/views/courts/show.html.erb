@@ -1,0 +1,13 @@
+<p>
+	<%= label_tag Name %><br />
+	<%= @court.name %>
+</p>
+
+<p>
+	<%= label_tag Active %><br />
+	<%= @court.active %>
+</p>
+
+
+<%= link_to 'Edit', edit_court_path(@court) %> |
+<%= link_to 'Back', courts_path %>

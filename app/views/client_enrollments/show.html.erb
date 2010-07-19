@@ -1,0 +1,48 @@
+<p>
+	<%= label_tag Client %><br />
+	<%= @client_enrollment.client_id %>
+</p>
+
+<p>
+	<%= label_tag Date on %><br />
+	<%= @client_enrollment.date_on %>
+</p>
+
+<p>
+	<%= label_tag Date off %><br />
+	<%= @client_enrollment.date_off %>
+</p>
+
+<p>
+	<%= label_tag Court %><br />
+	<%= @client_enrollment.court_id %>
+</p>
+
+<p>
+	<%= label_tag Installation amount %><br />
+	<%= @client_enrollment.installation_amount %>
+</p>
+
+<p>
+	<%= label_tag Daily monitoring amount %><br />
+	<%= @client_enrollment.daily_monitoring_amount %>
+</p>
+
+<p>
+	<%= label_tag Payment agreement amount %><br />
+	<%= @client_enrollment.payment_agreement_amount %>
+</p>
+
+<p>
+	<%= label_tag Payment agreement terms %><br />
+	<%= @client_enrollment.payment_agreement_terms_id %>
+</p>
+
+<p>
+	<%= label_tag Program status %><br />
+	<%= @client_enrollment.program_status_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_client_enrollment_path(@client_enrollment) %> |
+<%= link_to 'Back', client_enrollments_path %>

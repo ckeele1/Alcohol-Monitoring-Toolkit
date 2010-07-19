@@ -23,5 +23,6 @@ group :development do
 	# To use debugger
 	gem 'ruby-debug'
 
+	gem "rails3-generators"
 	gem 'sqlite3-ruby', :require => 'sqlite3'
 end

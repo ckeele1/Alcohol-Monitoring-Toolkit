@@ -1,0 +1,29 @@
+<h1>Listing <%= plural_name %></h1>
+
+<table>
+	<thead>
+<% for attribute in attributes -%>
+		<th><%= attribute.human_name %></th>
+<% end -%>
+		<th class="actions">Actions</th>
+	</thead>
+
+<%% @<%= plural_name %>.each do |<%= singular_name %>| %>
+	<tbody>
+		<tr class="<%%= cycle('even','odd') %>">
+<% for attribute in attributes -%>
+			<td><%%= <%= singular_name %>.<%= attribute.name %> %></td>
+<% end -%>
+			<td class="actions">
+				<%%= link_to image_tag('icons/show.png', :alt => 'Show'), <%= singular_name %> %> | 
+				<%%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_<%= singular_name %>_path(<%= singular_name %>) %> | 
+				<%%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), <%= singular_name %>, :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		</tr>
+	</tbody>
+<%% end %>
+</table>
+
+<br />
+
+<%%= link_to 'New <%= human_name %>', new_<%= singular_name %>_path %>

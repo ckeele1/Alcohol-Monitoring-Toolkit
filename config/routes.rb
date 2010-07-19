@@ -1,4 +1,10 @@
 AmToolkit::Application.routes.draw do |map|
+  resources :courts
+
+  resources :client_enrollments
+
+  resources :clients
+
   resources :agents
 
   resources :agencies

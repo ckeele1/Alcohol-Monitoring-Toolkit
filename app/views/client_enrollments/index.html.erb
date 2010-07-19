@@ -1,0 +1,41 @@
+<h1>Listing client_enrollments</h1>
+
+<table>
+	<thead>
+		<th>Client</th>
+		<th>Date on</th>
+		<th>Date off</th>
+		<th>Court</th>
+		<th>Installation amount</th>
+		<th>Daily monitoring amount</th>
+		<th>Payment agreement amount</th>
+		<th>Payment agreement terms</th>
+		<th>Program status</th>
+		<th class="actions">Actions</th>
+	</thead>
+
+<% @client_enrollments.each do |client_enrollment| %>
+	<tbody>
+		<tr class="<%= cycle('even','odd') %>">
+			<td><%= client_enrollment.client_id %></td>
+			<td><%= client_enrollment.date_on %></td>
+			<td><%= client_enrollment.date_off %></td>
+			<td><%= client_enrollment.court_id %></td>
+			<td><%= client_enrollment.installation_amount %></td>
+			<td><%= client_enrollment.daily_monitoring_amount %></td>
+			<td><%= client_enrollment.payment_agreement_amount %></td>
+			<td><%= client_enrollment.payment_agreement_terms_id %></td>
+			<td><%= client_enrollment.program_status_id %></td>
+			<td class="actions">
+				<%= link_to image_tag('icons/show.png', :alt => 'Show'), client_enrollment %> | 
+				<%= link_to image_tag('icons/edit.png', :alt => 'Edit'), edit_client_enrollment_path(client_enrollment) %> | 
+				<%= link_to image_tag('icons/destroy.png', :alt => 'Destroy'), client_enrollment, :confirm => 'Are you sure?', :method => :delete %>
+			</td>
+		</tr>
+	</tbody>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Client enrollment', new_client_enrollment_path %>

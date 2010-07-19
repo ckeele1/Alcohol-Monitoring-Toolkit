@@ -1,0 +1,10 @@
+<h1>New court</h1>
+
+<%= form_for(@court) do |f| %>
+	<%= render :partial => 'shared/notice_messages', :locals => { :css_id_prefix => 'court_', :error_messages => f.error_messages } %>
+
+	<%= render :partial => 'form', :locals => { :f => f } %>
+	<div class="actions submit">
+		<%= f.submit %> or <%= link_to 'cancel', courts_path %>
+	</div>
+<% end %>
